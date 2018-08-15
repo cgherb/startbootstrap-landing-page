@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,400');
 
 body {
-  font-family: 'Roboto', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 h1,
@@ -10,7 +10,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 
@@ -40,6 +40,26 @@ header.masthead .overlay {
 
 header.masthead h1 {
   font-size: 2rem;
+    font-weight: 100;
+}
+
+header.masthead h4 {
+    font-weight:400;
+}
+
+header.masthead input {
+    background-color: rgba(255,255,255,0);
+    border-color: white;
+    font-weight:100;
+    color: white;
+}
+
+header.masthead input:focus {
+  background-color: rgba(255,255,255,0);
+}
+
+header.masthead input::placeholder {
+  color: white;
 }
 
 @media (min-width: 768px) {
