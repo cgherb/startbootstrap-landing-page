@@ -58,6 +58,18 @@
                   <input type="email" class="form-control transparent-input" placeholder="Enter your email..." id="drip-email" name="fields[email]" value="">
                 </div>
               </div>
+                <div class="form-row ml-5 pl-5">
+                    <div class="mx-0 px-0">
+                        <input type="hidden" name="fields[eu_consent]" id="drip-eu-consent-denied" value="denied" />
+                        <input type="checkbox" name="fields[eu_consent]" id="drip-eu-consent" value="granted" />
+                    </div>
+                    <div div class="col-md-10 col-lg-10 col-xl-10 mx-0">
+                        <label for="drip-eu-consent">Yes, I agree to receive communication from Shine Bathroom Technologies Inc.  You may review our <a href="http://shinebathroom.com/privacy">privacy policy here</a></label>
+                    </div>
+                    <div>
+                        <input type="hidden" name="fields[eu_consent_message]" value="Yes, I agree to receive communication from Shine Bathroom Technologies Inc.  You may review our privacy policy here (http://shinebathroom.com/privacy)">
+                    </div>
+                </div>
               <div class="form-row">
                 <button type="submit" class="btn-outline-light btn-lg btn-primary mx-auto" value="Sign Up" data-drip-attribute="sign-up-button" id="requestInviteButton">Notify Me</button>
               </div>
