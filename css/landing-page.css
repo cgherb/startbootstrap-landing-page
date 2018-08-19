@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:100,400');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
 
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -17,12 +17,12 @@ h6 {
 header.masthead {
   position: absolute;
   background-color: #343a40;
-  background: url("../img/plant_masthead.jpg") no-repeat center center;
+  background: url("../img/marble-masthead.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-top: 8rem;
+  padding-top: 0;
   padding-bottom: 8rem;
   min-width: 100%;
   min-height: 100%
@@ -30,7 +30,7 @@ header.masthead {
 
 header.masthead .overlay {
   position: absolute;
-  background-color: #212529;
+  background-color: rgba(33, 37, 41, 0.37);
   height: 100%;
   width: 100%;
   top: 0;
@@ -40,17 +40,17 @@ header.masthead .overlay {
 
 header.masthead h1 {
   font-size: 2rem;
-    font-weight: 100;
 }
 
 header.masthead h4 {
-    font-weight:400;
+    font-weight:300;
+  color: #202326;
 }
 
 header.masthead input {
     background-color: rgba(255,255,255,0);
     border-color: white;
-    font-weight:100;
+    font-weight:300;
     color: white;
 }
 
@@ -64,7 +64,7 @@ header.masthead input::placeholder {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 5rem;
+    padding-top: 1rem;
     padding-bottom: 1rem;
   }
   header.masthead h1 {

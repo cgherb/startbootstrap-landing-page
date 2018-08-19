@@ -1,3 +1,6 @@
+var signUpSubmitButton = document.getElementById("requestInviteButton");
+var emailInput = document.getElementById("drip-email");
+
 function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
@@ -15,13 +18,15 @@ function getUrlParameter(sParam) {
 
 /*When doc loads, check if url parameter is present from getDrip Campaign*/
 $(document).ready(function () {
+
     var submission = getUrlParameter('submitted');
     if(submission == 1)
     {
         console.log("successful post");
         var regSuccessAlert = document.createElement('div');
-        regSuccessAlert.className = 'alert alert-success alert-dismissable collapse';
-        regSuccessAlert.innerHTML = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span>We have received your invitation request.  Share on facebook to have your invitation request expedited </span>';
+        regSuccessAlert.className = 'alert alert-success alert-dismissable collapse mx-2';
+        regSuccessAlert.style.zIndex = 1;
+        regSuccessAlert.innerHTML = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span>Thank you for signing up!</span>';
         document.getElementById("headerSection").insertBefore(regSuccessAlert,document.getElementById("main"));
         $(regSuccessAlert).fadeIn();
         window.setTimeout(function () {
@@ -33,3 +38,12 @@ $(document).ready(function () {
         console.log("nada");
     }
 });
+
+$(signUpSubmitButton).click(function ()
+{
+    if(  (!(emailInput.value.indexOf('@') > -1)) || (emailInput.value == null) || (emailInput.value == ""))
+    {
+        $(emailInput).popover({content: "Please enter a valid email", placement: "right"}).popover('show');
+    }
+});
+
