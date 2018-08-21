@@ -29,22 +29,23 @@ header.masthead {
 }
 
 header.masthead .overlay {
-  position: relative;
-  background-color: rgba(33, 37, 41, 0.37);
+  position: absolute;
+  background-color: rgba(33, 37, 41, 0.5);
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 header.masthead h1 {
   font-size: 2rem;
+  color: white;
 }
 
 header.masthead h4 {
-    font-weight:300;
-  color: #202326;
+    font-weight:100;
+    color: white
 }
 
 header.masthead input {

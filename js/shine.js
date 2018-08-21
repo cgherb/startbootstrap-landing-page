@@ -47,3 +47,13 @@ $(signUpSubmitButton).click(function ()
     }
 });
 
+$(emailInput).change(function () {
+    if($(emailInput).val().indexOf("@") > -1) {
+        $(signUpSubmitButton).removeClass("invisible").hide().fadeIn();
+    }
+    else
+    {
+        $(emailInput).popover({content: "Please enter a valid email", placement: "right"}).popover('show');
+    }
+});
+
