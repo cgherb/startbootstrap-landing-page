@@ -53,19 +53,15 @@ $(emailInput).change(function () {
     if(  (emailInput.value.indexOf('@') > -1) )
     {
         console.log("email good");
-    ga('send', {
-        hitType: 'event',
-        eventCategory: 'Form',
-        eventAction: 'Email Added',
-        eventLabel: 'Email Valid'
-    });
+        gtag('event', 'Email Added',{
+            eventCategory: 'Form',
+            eventLabel: 'Email Valid'
+        });
     }
     else
     {
-        ga('send', {
-            hitType: 'event',
+        gtag('event', 'Email Added',{
             eventCategory: 'Form',
-            eventAction: 'Email Added',
             eventLabel: 'Email NOT Valid'
         });
     }
@@ -75,19 +71,15 @@ $(nameInput).change(function () {
     if(  (nameInput.value != null))
     {
         console.log("name good");
-        ga('send', {
-            hitType: 'event',
+        gtag('event', 'Name Added',{
             eventCategory: 'Form',
-            eventAction: 'Name Added',
             eventLabel: 'Name Valid'
         });
     }
     else
     {
-        ga('send', {
-            hitType: 'event',
+        gtag('event', 'Name Added',{
             eventCategory: 'Form',
-            eventAction: 'Name Added',
             eventLabel: 'Name NOT Valid'
         });
     }
@@ -95,11 +87,8 @@ $(nameInput).change(function () {
 
 $(signUpSubmitButton).click(function () {
     console.log("submitting");
-    ga('send', {
-        hitType: 'event',
-        eventCategory: 'Form',
-        eventAction: 'Submit',
-        eventLabel: 'Email Submit'
+    gtag('event', 'sign_up',{
+        method: 'website'
     });
 });
 
@@ -107,10 +96,8 @@ $(euCheckbox).change(function () {
     console.log("consent!")
     if( $(euCheckbox).val() == "granted")
     {
-        ga('send', {
-            hitType: 'event',
+        gtag('event', 'EU-Checkbox',{
             eventCategory: 'Form',
-            eventAction: 'EU-Checkbox',
             eventLabel: 'Granted'
         });
     }
