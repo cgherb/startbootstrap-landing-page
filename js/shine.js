@@ -1,5 +1,7 @@
 var signUpSubmitButton = document.getElementById("requestInviteButton");
 var emailInput = document.getElementById("drip-email");
+var nameInput = document.getElementById("drip-name");
+var euCheckbox = document.getElementById("drip-eu-consent");
 
 function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -44,6 +46,73 @@ $(signUpSubmitButton).hover(function ()
     if(  (!(emailInput.value.indexOf('@') > -1)) || (emailInput.value == null) || (emailInput.value == ""))
     {
         $(emailInput).popover({content: "Please enter a valid email", placement: "right"}).popover('show');
+    }
+});
+
+$(emailInput).change(function () {
+    if(  (emailInput.value.indexOf('@') > -1) )
+    {
+        console.log("email good");
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Form',
+        eventAction: 'Email Added',
+        eventLabel: 'Email Valid'
+    });
+    }
+    else
+    {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'Form',
+            eventAction: 'Email Added',
+            eventLabel: 'Email NOT Valid'
+        });
+    }
+});
+
+$(nameInput).change(function () {
+    if(  (nameInput.value != null))
+    {
+        console.log("name good");
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'Form',
+            eventAction: 'Name Added',
+            eventLabel: 'Name Valid'
+        });
+    }
+    else
+    {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'Form',
+            eventAction: 'Name Added',
+            eventLabel: 'Name NOT Valid'
+        });
+    }
+});
+
+$(signUpSubmitButton).click(function () {
+    console.log("submitting");
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Form',
+        eventAction: 'Submit',
+        eventLabel: 'Email Submit'
+    });
+});
+
+$(euCheckbox).change(function () {
+    console.log("consent!")
+    if( $(euCheckbox).val() == "granted")
+    {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'Form',
+            eventAction: 'EU-Checkbox',
+            eventLabel: 'Granted'
+        });
     }
 });
 
