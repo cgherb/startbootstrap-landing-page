@@ -39,7 +39,7 @@ $(document).ready(function () {
     }
 });
 
-$(signUpSubmitButton).click(function ()
+$(signUpSubmitButton).hover(function ()
 {
     if(  (!(emailInput.value.indexOf('@') > -1)) || (emailInput.value == null) || (emailInput.value == ""))
     {
@@ -47,7 +47,7 @@ $(signUpSubmitButton).click(function ()
     }
 });
 
-$(emailInput).change(function () {
+/*$(emailInput).change(function () {
     if($(emailInput).val().indexOf("@") > -1) {
         $(signUpSubmitButton).removeClass("invisible").hide().fadeIn();
     }
@@ -55,5 +55,5 @@ $(emailInput).change(function () {
     {
         $(emailInput).popover({content: "Please enter a valid email", placement: "right"}).popover('show');
     }
-});
+});*/
 
